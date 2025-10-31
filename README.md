@@ -9,6 +9,7 @@ XLSX -> CSV -> HDFS -> PySpark ETL -> Parquet partitioned by Country -> Kafka Pr
 - **kafka_producer.py** : reads aggregated data and publishes each row as JSON to Kafka
 - **kafka_consumer.py** : consumes topic and prints messages
 
+## Architecture
 1. Data Source
 The raw dataset (`online_retail_II.csv`) is stored in **HDFS** under `/sis_project`.
 
@@ -28,8 +29,9 @@ The final aggregated or filtered results are sent to a **Kafka topic (`daily_rev
 - **Docker Compose**- containerized environment setup  
 
 ### 📂 HDFS Structure
+```
 /sis_project
 │── online_retail_II.csv
 │── sales_parquet/
 │── sales_csv/
-
+```
